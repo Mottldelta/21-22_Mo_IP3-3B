@@ -111,7 +111,49 @@ echo max($cisla) . "<br>";
 
 //2. hodina – pokračování v úvodu do PHP
 
-echo "2. hodina – pokračování v úvodu do PHP"
+echo "<h1>2. hodina – pokračování v úvodu do PHP</h1>";
+
+//úkol Pariz 1994 --> funkce Praha 2021
+
+$mesto = "Pariz ";
+$rok = 1994;
+
+function spojeni() {
+    global $mesto, $rok;
+    echo str_replace("Pariz ","Praha ", $mesto);
+    echo str_replace(1994,2021, $rok);
+    $mesto .= $rok;
+    echo $mesto . "<br>";
+}
+spojeni();
+
+//Matematika 2.0
+echo abs(-5) . "<br>";
+echo sqrt(124) . "<br>";
+echo round(12.49) . "<br>";
+echo rand(0,1) . "<br>";
+
+//úkol vygeneruj dvě čísla a vypiš je. Následně s nimi udělaj základní matematickou operaci
+function operace() {
+    $a = rand(0,50);
+    $b = rand(0,50);
+    echo "Cislo 1 je ". $a ." Cislo 2 je ". $b ."<br>";
+    $c = $a + $b;
+    echo "Jejich součet je ". $c ."<br>";
+}
+operace();
+
+//Konstanty
+define ("Ahoj", "Welcome");
+echo Ahoj;
+define ("pole", [1, 2, 3]);
+echo pole[1];
+
+//operatory
+$op = "100";
+$op1 = 100;
+echo var_dump($op === $op1);
+
 ?>
 
 
