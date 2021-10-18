@@ -225,5 +225,107 @@ function stastnychsedm1() {
     }
     echo "Celkově bylo vytaženo číslo 7: ". $sedm . "krát";
 }
-stastnychsedm1();
+//stastnychsedm1();
+
+// ukol 1. (viz prezentace)
+function ukol1() {
+    $x = rand(0,100);
+    $y = rand(0,100);
+    $min = 0;
+    $max = 0;
+    $pojistka = 0;
+    $pole = array();
+
+    if ($x > $y) {
+        $min = $y;
+        $max = $x;
+    } else {
+        $min = $x;
+        $max = $y;
+    }
+    if ($min == $max) {
+        $pojistka++;
+    }
+
+    if ($pojistka == 1) {
+        echo "Rozmezí je 0, takže cyklus nemá smysl provádět!";
+    } else {
+        $i = 0;
+        for($min; $min <= $max; $min++) {
+            $pole[$i] = $min;
+            $i++;
+        }
+    }
+    var_dump($pole);
+}
+//ukol1();
+
+// ukol 1. (viz prezentace) - obměna
+function ukolv1() {
+    $x = rand(0,100);
+    $y = rand(0,100);
+    $min = 0;
+    $max = 0;
+    $pojistka = 0;
+    $pole = array();
+
+    if ($x > $y) {
+        $min = $y;
+        $max = $x;
+    } else {
+        $min = $x;
+        $max = $y;
+    }
+    if ($min == $max) {
+        $pojistka++;
+    }
+
+    if ($pojistka == 1) {
+        echo "Rozmezí je 0, takže cyklus nemá smysl provádět!";
+    } else {
+        for($i=0; $i <= $max-$min; $i++) {
+            $pole[$i] = $min + $i;
+        }
+    }
+    var_dump($pole);
+}
+// ukolv1();
+
+// ukol 2. (viz prezentace)
+function ukol2()
+{
+    $pole = array();
+    $indchyba = rand(0, 100);
+    for ($i = 0; $i <= 100; $i++) {
+        if ($i == $indchyba) {
+            $pole[$i] = 101;
+        } else {
+            $pole[$i] = $i;
+        }
+    }
+
+    for ($i = 0; $i <= 100; $i++) {
+        if ($pole[$i] == 101) {
+            echo "Chyba byla nalezena!";
+            break;
+        } else {
+            echo $pole[$i] . "<br>";
+        }
+    }
+}
+// ukol2();
+
+// ukol 3. lichej/sudej index
+function ukol3() {
+    $pole = array();
+    for($i = 0; $i <= 100; $i++) {
+        if ($i % 2 == 0) {
+            $pole[$i] = 1;
+        } else {
+            $pole[$i] = "čislo";
+        }
+    }
+    var_dump($pole);
+}
+ukol3();
 ?>
