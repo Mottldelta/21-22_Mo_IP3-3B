@@ -329,8 +329,9 @@ function ukol3() {
 }
 //ukol3();
 
-
+//Uctenka základ
 function uctenka() {
+    echo "<h2>Učtenka z nákupu </h2>";
     $nakup = array("", "Rohlík", 5, "Pomelo", 10, "Káva", 20, "Houska", 5, "Mandrinka", 15, "Olej", 20, "Sýr", 30, "Šunka", 30, "Mléko", 25, "Pivo", 15, "Rýže", 50, "Těstoviny", 50, "Džus", 40, "Papír", 50, "Kuřecí maso", 100, "Vepřové maso", 120, "Cibule", 25, "Paprika", 40, "Salát", 30, "Kečup", 30, "Rajče", 10, "Tvaroh", 50);
     $pen = 500;
     while ($pen > 0) {
@@ -354,10 +355,40 @@ function uctenka() {
         }
     }
     if ($pen == 0) {
-        echo "Děkujeme za nákup, nemáte nic";
+        echo "<b>Děkujeme za nákup, nemáte nic</b>";
     } else {
-        echo "Děkujeme za nákup. Zůstatek na účtě je " . $pen;
+        echo "<b>Děkujeme za nákup. Zůstatek na účtě je " . $pen . "</b>";
     }
 }
-uctenka();
+//uctenka();
+
+//Uctenka bonus
+function uctenkabon()
+{
+    echo "<h2>Učtenka z nákupu </h2>";
+    $nakup = array("", "Rohlík", 5, "Pomelo", 10, "Káva", 20, "Houska", 5, "Mandrinka", 15, "Olej", 20, "Sýr", 30, "Šunka", 30, "Mléko", 25, "Pivo", 15, "Rýže", 50, "Těstoviny", 50, "Džus", 40, "Papír", 50, "Kuřecí maso", 100, "Vepřové maso", 120, "Cibule", 25, "Paprika", 40, "Salát", 30, "Kečup", 30, "Rajče", 10, "Tvaroh", 50);
+    $pen = rand(100,1000);
+    while ($pen % 5 != 0) {
+        $pen = rand(100,1000);
+    }
+    echo "Obsah peněženky na začátku nákupu je " . $pen . "<br>";
+    while ($pen > 0) {
+        $zbozi = rand(1, 44);
+        while ($zbozi % 2 != 0) {
+            $zbozi = rand(1, 44);
+        }
+        if ($nakup[$zbozi] > $pen) {
+            continue;
+        } else {
+            $pen = $pen - $nakup[$zbozi];
+            echo "Nakupčí koupil " . $nakup[$zbozi - 1] . " což stálo " . $nakup[$zbozi] . "<br>";
+        }
+    }
+    if ($pen == 0) {
+        echo "<b>Děkujeme za nákup, nemáte nic</b>";
+    } else {
+        echo "<b>Děkujeme za nákup. Zůstatek na účtě je " . $pen . "</b>";
+    }
+}
+uctenkabon();
 ?>
