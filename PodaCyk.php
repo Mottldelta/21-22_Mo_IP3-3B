@@ -372,6 +372,7 @@ function uctenkabon()
         $pen = rand(100,1000);
     }
     echo "Obsah peněženky na začátku nákupu je " . $pen . "<br>";
+    $i = 0;
     while ($pen > 0) {
         $zbozi = rand(1, 44);
         while ($zbozi % 2 != 0) {
