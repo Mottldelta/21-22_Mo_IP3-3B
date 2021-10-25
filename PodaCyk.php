@@ -327,5 +327,37 @@ function ukol3() {
     }
     var_dump($pole);
 }
-ukol3();
+//ukol3();
+
+
+function uctenka() {
+    $nakup = array("", "Rohlík", 5, "Pomelo", 10, "Káva", 20, "Houska", 5, "Mandrinka", 15, "Olej", 20, "Sýr", 30, "Šunka", 30, "Mléko", 25, "Pivo", 15, "Rýže", 50, "Těstoviny", 50, "Džus", 40, "Papír", 50, "Kuřecí maso", 100, "Vepřové maso", 120, "Cibule", 25, "Paprika", 40, "Salát", 30, "Kečup", 30, "Rajče", 10, "Tvaroh", 50);
+    $pen = 500;
+    while ($pen > 0) {
+        $zbozi = rand(1,44);
+        if ($zbozi % 2 == 0) {
+            if ($nakup[$zbozi] > $pen) {
+                echo "Nakupčí chtěl koupit: " . $nakup[$zbozi-1] . " což stálo " . $nakup[$zbozi] . " na což neměl dost peněz" . "<br>";
+                break;
+            } else {
+                $pen = $pen - $nakup[$zbozi];
+                echo "Nakupčí koupil " . $nakup[$zbozi-1] . " což stálo " . $nakup[$zbozi] . "<br>";
+            }
+        } else {
+            if ($nakup[$zbozi+1] > $pen) {
+                echo "Nakupčí chtěl koupit: " . $nakup[$zbozi] . " což stálo " . $nakup[$zbozi+1] . " na což neměl dost peněz" . "<br>";
+                break;
+            } else {
+                $pen = $pen - $nakup[$zbozi+1];
+                echo "Nakupčí koupil " . $nakup[$zbozi] . " což stálo " . $nakup[$zbozi+1] . "<br>";
+            }
+        }
+    }
+    if ($pen == 0) {
+        echo "Děkujeme za nákup, nemáte nic";
+    } else {
+        echo "Děkujeme za nákup. Zůstatek na účtě je " . $pen;
+    }
+}
+uctenka();
 ?>
