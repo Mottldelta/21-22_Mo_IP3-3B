@@ -77,7 +77,7 @@ $pole = array(1, "Petr", 2.5, 2);
 
 //Asoc. pole
 
-$age = array("Peter"=>"35", "Ben"=>"37", "Joe"=>"43");
+$age = array("Peter"=>55, "Ben"=>40, "Joe"=>25);
 //echo $age["Peter"];
 
 //Cyklus Foreach
@@ -106,7 +106,7 @@ echo $admin[2][2];
 */
 
 //Multidimenzionální pole - úkol (vypsat do seznamu)
-
+/*
 for($radky=0; $radky <= 2; $radky++) {
     echo "<h2>". $admin[$radky][0] ."</h2>";
     echo "<ul>";
@@ -115,9 +115,61 @@ for($radky=0; $radky <= 2; $radky++) {
     }
     echo "</ul>";
 }
-
+*/
 //Multidimenzonílní pole - úkoly (vypsat do seznamu číselného)
 $vysledky = array(array("Gustav", 2, 5, 6),array("Eliška", 5, 8, 9),array("Frederik", 1, 1, 1),array("Linda", 9, 8, 7));
+/*
+for($radky=0; $radky <= 3; $radky++) {
+    echo "<h2>". $vysledky[$radky][0] ."</h2>";
+    echo "<ol>";
+    for($sloupce=1; $sloupce <= 3; $sloupce++) {
+        echo "<li>". $vysledky[$radky][$sloupce] . "</li>";
+    }
+    echo "</ol>";
+}
+*/
+
+//Srovnání pole
+/*
+$cisla = array(2,9,3,6,20,11,8);
+var_dump($cisla);
+sort($cisla);
+var_dump($cisla);
+
+//srovnání naopak
+rsort($cisla);
+var_dump($cisla);
+
+//asoc. pole srovnání
+var_dump($age);
+
+//asoc. pole srovná podle hodnoty
+asort($age);
+var_dump($age);
+
+//asoc. pole srovná podle klíče
+ksort($age);
+var_dump($age);
+
+//asoc. pole srovná podle hodnoty naopak
+arsort($age);
+var_dump($age);
+
+//asoc. pole srovná podle klíče naopak
+krsort($age);
+var_dump($age);
+*/
+
+//Srovnání random pole - úkol
+$pole = array();
+for($i=0;$i<=9;$i++) {
+   $pole[$i] = rand(0,10);
+}
+var_dump($pole);
+sort($pole);
+var_dump($pole);
+rsort($pole);
+var_dump($pole);
 
 ?>
 
