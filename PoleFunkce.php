@@ -99,9 +99,25 @@ foreach ($age as $x => $value) {
 $admin = array(array("Petr", 20, "Čech", "Pardubice"),
     array("Petra", 19, "Slovenka", "Trenčíně"),
     array("Peter", 20, "Američan", "New York"));
-
-echo $admin[1][2];
+/*
+echo "<h1>". $admin[1][2] . "</h1>";
 echo $admin[2][3];
 echo $admin[2][2];
+*/
+
+//Multidimenzionální pole - úkol (vypsat do seznamu)
+
+for($radky=0; $radky <= 2; $radky++) {
+    echo "<h2>". $admin[$radky][0] ."</h2>";
+    echo "<ul>";
+    for($sloupce=1; $sloupce <= 3; $sloupce++) {
+        echo "<li>". $admin[$radky][$sloupce] . "</li>";
+    }
+    echo "</ul>";
+}
+
+//Multidimenzonílní pole - úkoly (vypsat do seznamu číselného)
+$vysledky = array(array("Gustav", 2, 5, 6),array("Eliška", 5, 8, 9),array("Frederik", 1, 1, 1),array("Linda", 9, 8, 7));
+
 ?>
 
