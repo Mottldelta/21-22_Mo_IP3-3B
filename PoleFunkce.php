@@ -48,5 +48,60 @@ function scitacka(int $a, int $b) {
 
 /*echo "Součet čísel: " . scitacka(8,16) . "<br>";
 echo "Součet čísel: " . scitacka(1,2) . "<br>";*/
+
+//příklad funkce s argumentem - jmeno, datum, místo
+
+function jmendatmist(string $jmeno, int $datum, string $misto) {
+    echo $jmeno . " se narodil v roce " . $datum . " ve městě " . $misto . "<br>";
+}
+
+/*jmendatmist("Jan", 1989,"Pardubice");
+jmendatmist("Petra", 2001,"Hradec Králové");*/
+
+// Funkce s argumentem - datový typ - datový typ výsledku
+
+function nasobení(float $e, float $f) : int{
+     $g = $e * $f;
+     return (int) $g;
+}
+
+//echo nasobení(1.2,3.2);
+//echo nasobení(5.2,6.6);
+
+//Pole zopakování syntaxe
+
+$pole = array(1, "Petr", 2.5, 2);
+//echo $pole[2];
+//echo count($pole);
+//var_dump($pole);
+
+//Asoc. pole
+
+$age = array("Peter"=>"35", "Ben"=>"37", "Joe"=>"43");
+//echo $age["Peter"];
+
+//Cyklus Foreach
+    $auto = array("BMW", "Volvo", "Mercedes", "Toyota");
+    /*foreach ($auto as $value) {
+        echo $value . "<br>";
+    }*/
+
+
+//Asoc. pole výpis pomocí foreach
+
+/*
+foreach ($age as $x => $value) {
+    echo $x . " je starý ". $value . " let<br>";
+} */
+
+//Multidimenzonální pole
+
+$admin = array(array("Petr", 20, "Čech", "Pardubice"),
+    array("Petra", 19, "Slovenka", "Trenčíně"),
+    array("Peter", 20, "Američan", "New York"));
+
+echo $admin[1][2];
+echo $admin[2][3];
+echo $admin[2][2];
 ?>
 
