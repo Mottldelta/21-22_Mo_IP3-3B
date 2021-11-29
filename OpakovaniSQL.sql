@@ -30,11 +30,11 @@ ALTER TABLE zamestnanci
 
 -- Komplexní tabulka (s omezeními)
 CREATE TABLE zamestatnanci (
-    ID int NOT NULL AUTO_INCREMENT,
-    Jmeno varchar(255) NOT NULL,
-    Prijmeni varchar(255) NOT NULL,
-    Adresa varchar(255),
-    PRIMARY KEY(ID)
+                               ID int NOT NULL AUTO_INCREMENT,
+                               Jmeno varchar(255) NOT NULL,
+                               Prijmeni varchar(255) NOT NULL,
+                               Adresa varchar(255),
+                               PRIMARY KEY(ID)
 );
 
 -- Podmíněný výběr
@@ -46,3 +46,42 @@ WHERE country = 'Austria';
 SELECT phone, name
 FROM employees
 WHERE ID BETWEEN 15 AND 25;
+
+-- Podmíněný výběr IN
+SELECT name, phone
+FROM employees
+WHERE country IN ('Colombia', 'Brazil');
+
+-- Podmíněný výběr LIKE
+SELECT *
+FROM employees
+WHERE name LIKE 'B%y';
+
+-- JOIN
+SELECT zamestatnanci.Adresa,pracoviste.Nazev
+FROM zamestatnanci
+INNER JOIN pracoviste ON zamestatnanci.IDpracoviste=pracoviste.ID;
+
+-- UPDATE
+UPDATE `employees` S
+SET `country` = 'Brazil'
+WHERE `employees`.`id` = 14;
+
+-- DELETE
+DELETE FROM employees
+WHERE id BETWEEN 5 AND 10;
+
+-- LIMIT
+SELECT name
+FROM employees
+WHERE name LIKE 'c%'
+LIMIT 3;
+
+-- MIN a MAX
+SELECT MAX(id)
+FROM employees;
+
+-- COUNT
+SELECT COUNT(*)
+FROM employees
+WHERE country IN ('Brazil', 'China', 'India', 'Colombia', 'Vietnam', 'Nigeria', 'Chile', 'Pakistan', 'Netherlands');
