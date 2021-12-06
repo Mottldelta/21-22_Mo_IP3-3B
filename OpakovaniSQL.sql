@@ -85,3 +85,13 @@ FROM employees;
 SELECT COUNT(*)
 FROM employees
 WHERE country IN ('Brazil', 'China', 'India', 'Colombia', 'Vietnam', 'Nigeria', 'Chile', 'Pakistan', 'Netherlands');
+
+-- ORDER BY
+SELECT *
+FROM employees
+ORDER BY name, address
+
+-- GROUP BY
+SELECT COUNT(id), address
+FROM employees
+GROUP BY address
