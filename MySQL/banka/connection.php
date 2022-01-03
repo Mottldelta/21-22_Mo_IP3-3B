@@ -1,19 +1,18 @@
 <?php
+
 $servername = "localhost";
 $username = "root";
 $password = "";
-$dbname = "zoo";
+$dbname = "banks";
+
 try {
     $conn = new PDO("mysql:host=$servername;dbname=$dbname", $username, $password);
     // set the PDO error mode to exception
     $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-    $sql = "INSERT INTO animals (name, animal, class, IDrun)
-  VALUES ('Gregor', 'Doplhin', 'Mammalia', 1)";
-    // use exec() because no results are returned
-    $conn->exec($sql);
-    echo "New record created successfully";
+    echo "Connected successfully";
 } catch(PDOException $e) {
-    echo $sql . "<br>" . $e->getMessage();
+    echo "Connection failed: " . $e->getMessage();
 }
+
 $conn = null;
 ?>
