@@ -23,10 +23,12 @@ if ($result->num_rows > 0) {
 $conn->close();
 
 
-$adress1 = "edit.php?idzak=$id&suma=";
+$adress1 = "edit.php?idzak=$id&suma=20";
 echo "<br>" . "<a href= ". $adress1 . ">Strhnout poplatek za kreditní kartu</a><br>";
-$adress2 = "edit.php?idzak=$id&suma=";
-echo "<br>" . "<a href= ". $adress2 . ">Strhnout poplatek za účet</a><br>";
+$adress2 = "edit.php?idzak=$id&suma=100";
+echo "<a href= ". $adress2 . ">Strhnout poplatek za účet</a><br>";
+$adress3 = "edit.php?idzak=$id&suma=";
+echo "<a href= ". $adress3 . ">Vynulovat účet</a><br>";
 $adress = "seznam.php";
 echo  "<a href= ". $adress . ">Zpět na seznam zákazníků!</a><br>";
 ?>
