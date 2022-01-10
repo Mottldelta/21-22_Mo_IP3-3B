@@ -15,13 +15,18 @@ $result = $conn->query($sql);
 if ($result->num_rows > 0) {
     // output data of each row
     while($row = $result->fetch_assoc()) {
-        echo "<b>" .$row["name"] . "</b>" . "<br>" . $row["email"] . "<br>" . $row["country"] . "<br>" . $row["currency"];
+        echo "<b>" .$row["name"] . "</b>" . "<br>" . $row["email"] . "<br>" . $row["country"] . "<br> Zůstatek na účtu: " . $row["currency"] . "<br>";
     }
 } else {
     echo "0 results";
 }
 $conn->close();
 
-$adress = "index.php";
-echo "<br>" . "<a href= ". $adress . ">Zpět na hlavní stránku!</a>";
+
+$adress1 = "edit.php?idzak=$id&suma=";
+echo "<br>" . "<a href= ". $adress1 . ">Strhnout poplatek za kreditní kartu</a><br>";
+$adress2 = "edit.php?idzak=$id&suma=";
+echo "<br>" . "<a href= ". $adress2 . ">Strhnout poplatek za účet</a><br>";
+$adress = "seznam.php";
+echo  "<a href= ". $adress . ">Zpět na seznam zákazníků!</a><br>";
 ?>
