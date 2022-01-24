@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="cs">
+<head>
+    <meta charset="UTF-8">
+    <title>HMTL Form</title>
+</head>
+<body>
+
+<form action="submitform.php" method="post">
+    <fieldset>
+        <legend>Osobní údaje zákazníka</legend>
+        <!--    Label s textovým polem-->
+        <label for="custname">Zákazníkovo jméno: </label>
+        <input type="text" name="zakazjmen" id="custname" placeholder="Napiš své jméno" autofocus> <br>
+        <!--    Radiobuttons -->
+        <label for="custmale">Muž</label>
+        <input type="radio" id="custmale" name="zakazpoh" value="m">
+        <label for="custfemale">Žena</label>
+        <input type="radio" id="custfemale" name="zakazpoh" value="f">
+        <label for="custother">Jiné</label>
+        <input type="radio" id="custother" name="zakazpoh" value="o">
+        <br>
+<!--        Heslo-->
+        <label for="custpass">Heslo zákazníka: </label>
+        <input type="password" id="custpass" name="zakazheslo">
+        <br>
+<!--        Datum-->
+        <label for="custdate">Datum narození: </label>
+        <input type="date" id="custdate" name="zakazdatum">
+        <br>
+    </fieldset>
+    <fieldset>
+        <legend>Detaily zákazníkova účtu:</legend>
+        <!--    Checkbox-->
+        <label for="katkitchen">Kuchyňské spotřebiče</label>
+        <input type="checkbox" id="katkitchen" name="zakazkat" value="kitchen">
+        <label for="katele">Elektronické spotřebiče</label>
+        <input type="checkbox" id="katele" name="zakazkat" value="electro">
+        <br>
+
+        <!--    Seznam-->
+        <label for="custtype">Typ účtu: </label>
+        <select id="custtype" name="zakaztyp" size="3" multiple>
+            <option value="silver">Stříbrný účet</option>
+            <option value="gold">Zlatý účet</option>
+            <option value="platinum" selected>Platinový účet</option>
+        </select> <br>
+    </fieldset>
+    <fieldset>
+        <legend>Poznámky na konec:</legend>
+        <!--    Textové pole velké-->
+        <label for="custmes">Zpráva od zákazníka: </label> <br>
+        <textarea id="custmes"></textarea>
+        <br>
+    </fieldset>
+    <!--    Tlačítko-->
+    <button disabled>Klikni na mě!</button>
+    <br>
+<!--    Tlačítko reset-->
+    <input type="reset">
+    <br>
+<!--    Tlačítko pro odeslání formuláře-->
+    <input type="submit">
+    <br>
+</form>
+
+</body>
+</html>

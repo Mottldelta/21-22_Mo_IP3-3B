@@ -1,4 +1,6 @@
 <?php
+$adresaimg = "https://image.shutterstock.com/image-vector/bank-icon-logo-vector-260nw-399995245.jpg";
+echo "<img src=" . $adresaimg . ">";
 echo "<h1>Administrátor banky 3000</h1>";
 $adress = "vloznahod.php";
 echo "<a href= ". $adress . ">Vložit náhodného zákazníka banky</a>" . "<br>";
