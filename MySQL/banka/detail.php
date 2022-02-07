@@ -36,6 +36,23 @@ $adress4 = "edit.php?idzak=$id&ukon=2&suma=$uspory";
 echo "<a href= ". $adress4 . ">Započíst úspory</a><br>";
 $adress5 = "edit.php?idzak=$id&ukon=3&suma=0";
 echo "<a href= ". $adress5 . ">Smazat účet</a><br>";
+$adress6 = "upravform.php?idzak=$id";
+echo "<a href= ". $adress6 . ">Upravit účet</a><br>";
+
+
 $adress = "seznam.php";
 echo  "<br>" . "<a href= ". $adress . ">Zpět na seznam zákazníků!</a><br>";
+
 ?>
+<br>
+<h2>Výběr a Vklad:</h2>
+<form action="vkladvyber.php" method="post">
+    <label for="suma">Suma:</label>
+    <input type="number" id="suma" name="money"><br>
+    <label for="vyber">Výběr</label>
+    <input type="radio" id="vyber" name="task" value="1" required>
+    <label for="vklad">Vklad</label>
+    <input type="radio" id="vklad" name="task" value="2" required><br>
+    <input type="text" <?php echo "value=$id" ?> hidden name="id">
+    <input type="submit">
+</form>
