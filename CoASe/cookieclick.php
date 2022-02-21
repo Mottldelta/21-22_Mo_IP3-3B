@@ -12,6 +12,7 @@ if(!isset($_COOKIE['klik'])) {
 <form>
     <button onclick="<?php click() ?>">CLICK</button>
     <button onclick="<?php resett() ?>">RESET</button>
+    <button onclick="<?php kacha() ?>" disabled>KUP KACHNU</button>
 </form>
 </html>
 
@@ -22,5 +23,8 @@ function click() {
 }
 function resett() {
     setcookie('klik',0,time()-1000,"/");
+}
+function kachan() {
+
 }
 ?>
