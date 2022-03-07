@@ -8,4 +8,7 @@ if(!isset($_COOKIE['kolac'])) {
 } else {
     echo $_COOKIE['kolac'];
 }
+setcookie('Susenka', 'cokolada', time()-200, "/");
+setcookie('kolac', 'cokolada', time()-200, "/");
+
 ?>
