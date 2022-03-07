@@ -1,7 +1,7 @@
 <?php
 session_start();
 if(isset($_SESSION['login'])) {
-    echo "Jste přihlášen";
+    echo "Jste přihlášen " . $_SESSION['login'];
     echo "<form action='sesexit.php'><input type='submit' value='Odhlásit'></form>";
 }
 ?>

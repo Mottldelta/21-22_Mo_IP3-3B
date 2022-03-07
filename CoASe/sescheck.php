@@ -1,14 +1,14 @@
 <?php
 session_start();
-$user = "username";
+$user = "jan";
 $pass = 12345;
 
 $zadjmeno = $_POST['jmeno'];
 $zadheslo = $_POST['heslo'];
 
 if ($zadjmeno == $user and $zadheslo == $pass) {
-    echo "Přihlásil jste se!";
-    $_SESSION['login'] = 1;
+    echo "Vítejte ".$_SESSION['login'];
+    $_SESSION['login'] = $zadjmeno;
 } else {
     echo "špatné přihlašovací údaje";
 }
