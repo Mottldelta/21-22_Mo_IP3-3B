@@ -2,6 +2,7 @@
 session_start();
 if(isset($_SESSION['login'])) {
     echo "Jste přihlášen";
+    echo "<form action='sesexit.php'><input type='submit' value='Odhlásit'></form>";
 }
 ?>
 <html lang="cs">
@@ -10,8 +11,8 @@ if(isset($_SESSION['login'])) {
     <title>HMTL Form</title>
 </head>
 <body>
-<h1>Login</h1>
-<form action="sescheck.php" method="post">
+<form action="sescheck.php" method="post" <?php if(isset($_SESSION['login'])) {echo "hidden";} ?>>
+    <h1>Login</h1>
     <!--    Label s textovým polem-->
     <label for="custname">Jméno: </label>
     <input type="text" name="jmeno" id="custname" placeholder="Napiš své jméno" autofocus> <br>
@@ -21,7 +22,7 @@ if(isset($_SESSION['login'])) {
     <br>
 
     <!--    Tlačítko pro odeslání formuláře-->
-    <input type="submit">
+    <input type="submit" value="Přihlásit" <?php if(isset($_SESSION['login'])) {echo "disabled";} ?>>
     <br>
 </form>
 
